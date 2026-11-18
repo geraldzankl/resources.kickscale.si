@@ -40,3 +40,13 @@ The 17-document library provides localized search and filtering, FAQs, Google Cl
 Run `python3 -m http.server 8080` from the repository root. Directory-based routes work with trailing slashes; Apache/LiteSpeed is needed to exercise `.htaccess` redirects and response headers. Edit the static locale files directly; keep equivalent language pages and switches synchronized.
 
 <!-- Hostinger publish trigger: 2026-10-22; no website content changes. -->
+
+## Customer-facing Sales Room update — November 18, 2026
+
+This repository is the **public-facing Sales Room** for prospects and customers, distinct from the internal Sales Hub at `sales.kickscale.si`.
+
+Navigation is synchronized in German and English across Overview (`/en/`, `/de/`), About Kickscale (`/en/about/`, `/de/about/`), Onboarding and Support. The About pages include the original localized Notion Sales Room's company presentation link, descriptions, demo embeds, ROI links, product positioning, contact information, one-pager catalog and Privacy Center.
+
+The two old Notion Sales Room page links have been removed entirely. Of the linked source media, directly embeddable externally hosted videos are displayed on the page; **16 original Notion-uploaded media files** (8 per language, including one-pagers and videos) could not be migrated as self-hosted binaries. They now use explicit email requests (`sales@kickscale.com`) rather than opening the original Notion Sales Room. Replace these request links with permanent uploaded public media assets before considering the binary migration complete.
+
+Both projects have been committed to the respective GitHub `main` branches. These commits do not prove Hostinger live publication; confirm auto-deploy is configured or deploy from Hostinger hPanel and check the live links.
