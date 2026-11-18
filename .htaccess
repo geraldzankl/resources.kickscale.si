@@ -32,7 +32,7 @@ Options -Indexes -MultiViews
   RewriteRule ^(?:en|de)/index\.html$ /%1/ [R=301,L]
 
   # Proposal resource hub: explicit clean language routes.
-  RewriteRule ^(en|de)/(onboarding|support)/?$ $1/$2/index.html [END]
+  RewriteRule ^(en|de)/(onboarding|support|about)/?$ $1/$2/index.html [END]
   RewriteRule ^onboarding/?$ /en/onboarding/ [R=302,L]
   RewriteRule ^support/?$ /en/support/ [R=302,L]
 
