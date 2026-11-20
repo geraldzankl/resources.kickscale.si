@@ -1,0 +1,52 @@
+/*
+ * Kickscale shared typography for resources.kickscale.si
+ * Brand reference: Gellix Bold + Reckless Neue Regular.
+ * Licensed local fonts are preferred. Free fallback webfonts keep the design
+ * consistent until commercially licensed WOFF2 files are deployed.
+ * Do not redistribute proprietary font files in this repository.
+ */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=DM+Serif+Display&display=swap");
+@font-face {
+  font-family: "Kickscale Gellix";
+  src: local("Gellix Regular"), local("Gellix-Regular"), local("Gellix");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Kickscale Gellix";
+  src: local("Gellix Bold"), local("Gellix-Bold"), local("Gellix ExtraBold");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Kickscale Reckless Neue";
+  src: local("Reckless Neue Regular"), local("RecklessNeue-Regular"), local("Reckless Neue");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --ks-font-primary: "Kickscale Gellix", "DM Sans", Arial, sans-serif;
+  --ks-font-editorial: "Kickscale Reckless Neue", "DM Serif Display", Georgia, serif;
+  --head: var(--ks-font-primary) !important;
+  --body: var(--ks-font-primary) !important;
+}
+html body,
+html body :is(button,input,textarea,select,option) {
+  font-family: var(--ks-font-primary) !important;
+}
+html :is(h1,h2,h3,h4,h5,h6,.eyebrow,.section-label,.section-heading,.metric strong,.stat strong,.kpi,.summary-price,.value-strip strong,.big,.hero-kpi,.card h3,.agent-card h3,.plan-title,.nav,.brand em) {
+  font-family: var(--ks-font-primary) !important;
+}
+html :is(h1,h2,h3) em,
+html :is(h1,h2,h3) > span:not(.step):not(.icon-box):not(.number),
+html :is(.hero,.trust-hero,.customers-hero,.overview-hero,.about-hero,.sales-hero,.page-title) h1 em,
+html .headline-editorial,
+html .editorial {
+  font-family: var(--ks-font-editorial) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+}

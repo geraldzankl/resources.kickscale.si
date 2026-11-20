@@ -50,3 +50,9 @@ Navigation is synchronized in German and English across Overview (`/en/`, `/de/`
 The two old Notion Sales Room page links have been removed entirely. Of the linked source media, directly embeddable externally hosted videos are displayed on the page; **16 original Notion-uploaded media files** (8 per language, including one-pagers and videos) could not be migrated as self-hosted binaries. They now use explicit email requests (`sales@kickscale.com`) rather than opening the original Notion Sales Room. Replace these request links with permanent uploaded public media assets before considering the binary migration complete.
 
 Both projects have been committed to the respective GitHub `main` branches. These commits do not prove Hostinger live publication; confirm auto-deploy is configured or deploy from Hostinger hPanel and check the live links.
+
+## Typography alignment — November 20, 2026
+
+The entire customer-facing site loads `/kickscale-typography.css` via the core `styles.css`, `proposal-hub.css`, and `trust-center-library.css` entrypoints. Headlines use the Kickscale Gellix family; editorial highlighted headline text uses Reckless Neue Regular in **upright** style, replacing the older Poppins / Instrument Serif treatment. Body and UI typography also use Gellix-first stacks. Brand colours remain unchanged.
+
+**Font-license caveat:** The proprietary Gellix / Reckless Neue WOFF files are not present in the repository. CSS checks locally installed Gellix/Reckless Neue and otherwise loads commercially usable DM Sans / DM Serif Display fallback fonts from Google Fonts. An exact visual match on every device requires the company's licensed webfont assets to be supplied and hosted; do not copy licensed font files from PDFs or third-party repos without distribution rights.

@@ -1,3 +1,4 @@
+@import url("/kickscale-typography.css?v=20261120");
 @font-face{font-family:Poppins;src:url('/assets/fonts/poppins-latin-800.woff2') format('woff2');font-weight:800;font-display:swap}
 @font-face{font-family:Inter;src:url('/assets/fonts/inter-latin-variable.woff2') format('woff2');font-weight:100 900;font-display:swap}
 :root{--navy:#030929;--turquoise:#2BCCC5;--yellow:#ECE338;--red:#FF3463;--panel:#14263e;--muted:#b9c4d6;--line:#ffffff24;--head:Poppins,Inter,Arial,sans-serif;--body:Inter,Arial,sans-serif;color-scheme:dark}
