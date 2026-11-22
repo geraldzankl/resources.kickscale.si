@@ -56,3 +56,6 @@
     window.matchMedia('(min-width:901px)').addEventListener('change', closeMenu);
   }
 })();
+
+/* Load the shared buyer-facing navigation for public resources. */
+(function(){var s=document.createElement("script");s.src="/buyer-nav.js?v=20261122";s.defer=true;document.head.appendChild(s)})();
