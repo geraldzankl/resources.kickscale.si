@@ -56,3 +56,19 @@ Both projects have been committed to the respective GitHub `main` branches. Thes
 The entire customer-facing site loads `/kickscale-typography.css` via the core `styles.css`, `proposal-hub.css`, and `trust-center-library.css` entrypoints. Headlines use the Kickscale Gellix family; editorial highlighted headline text uses Reckless Neue Regular in **upright** style, replacing the older Poppins / Instrument Serif treatment. Body and UI typography also use Gellix-first stacks. Brand colours remain unchanged.
 
 **Font-license caveat:** The proprietary Gellix / Reckless Neue WOFF files are not present in the repository. CSS checks locally installed Gellix/Reckless Neue and otherwise loads commercially usable DM Sans / DM Serif Display fallback fonts from Google Fonts. An exact visual match on every device requires the company's licensed webfont assets to be supplied and hosted; do not copy licensed font files from PDFs or third-party repos without distribution rights.
+
+## Buyer-first Resources consolidation — November 22, 2026
+
+The `/en/` and `/de/` pages now combine the former overview and About Kickscale into a short, factual introduction plus searchable resources (twelve quick links, five capability shortcuts, demo/role/industry materials).
+
+Four main navigation destinations are maintained in English and German:
+- Product Information: `/en/product/`, `/de/produkt/`, five capability sections, integrations, Help Center.
+- Presentations & Materials: `/en/presentations/`, `/de/presentations/`, locale-specific official Canva decks, existing Bunny video embeds and original Notion Sales Room one-pagers. Where original Notion media are not yet available as downloadable assets, a clear `mailto:sales@kickscale.com` request link remains.
+- ROI Calculator: `/en/roi-calculator/`, `/de/roi-calculator/`, the functional CRM + Agents + Coaching model adapted from the internal Sales HQ. Internal-only status and hidden Sales HQ metadata have been removed; a neutral generic example is used, and savings estimates are explicitly illustrative.
+- Legal & Compliance: German `https://www.kickscale.com/legal`; English `https://www.kickscale.com/en/legal`.
+
+The buyer-facing header navigation is shared across the overview, product, presentation, ROI, onboarding, support, customer stories and Trust Center. The previous `/en/about/` and `/de/about/` pages redirect into the new structure; known section fragments map to their equivalent destinations.
+
+The new static assets are `buyer-hub.css`, `buyer-nav.js`, `buyer-roi-calculator.js`, `buyer-roi-calculator.css`. Hostinger `.htaccess` has matching explicit rewrite rules. Changes are committed to GitHub main, but live Hostinger deployment is **not verified** in the current execution environment. Verify auto-deploy or redeploy `main` in Hostinger; check navigation, locale links, media embeds, ROI interaction, and language-specific legal links after publication.
+
+The resources remain publicly readable. No `noindex` directive is a security control. Do not publish customer-specific negotiated pricing, internal credentials or confidential attachments in these static files.
