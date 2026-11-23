@@ -91,3 +91,9 @@ header:has(.buyer-global-nav) .hero{z-index:0!important}
 .buyer-video-frame{width:100%;aspect-ratio:16/9;background:#030929}
 .buyer-video-frame iframe{display:block;width:100%;height:100%;aspect-ratio:16/9;border:0}
 @media(max-width:1050px){.buyer-global-nav{overflow:visible!important}}
+
+/* Crop excessive letterboxing inside original embedded demo recordings.
+   A separate link below each player opens the original uncropped full-screen player. */
+.buyer-video-frame{position:relative;overflow:hidden;background:#030929}
+.buyer-video-frame iframe{position:absolute;top:0;left:0;transform:scale(2.55);transform-origin:center center}
+.buyer-video-external{display:inline-flex;margin-top:10px;font-size:13px;font-weight:800;color:#097b76;text-decoration:none}
