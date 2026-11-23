@@ -91,3 +91,7 @@ The resources remain publicly readable. No `noindex` directive is a security con
 - The Product Information navigation uses a large bilingual mega-menu inspired by the existing Kickscale website. It links module items directly to `www.kickscale.com` product routes (based on the parallel Kickscale PHP site's route definitions), integration and release pages, Help Center, and legal docs. These external destinations were not HTTP-verified from the execution environment; manually verify after Hostinger deployment.
 - `Presentations & Demos` / `Präsentationen & Demos` is the title in the shared navigation, homepage cards and presentation pages.
 - Static JavaScript syntax, ROI module-off/on calculations in both languages and source-level page checks passed. Browser visual QA and Hostinger publication remain to be confirmed.
+
+## Public Product Roadmap — November 23, 2026
+
+The public customer-safe roadmap is available at `/en/roadmap/` and `/de/roadmap/` and is linked from the Resource Hub navigation and homepage. It is a curated, human-readable **static snapshot** from Linear (4 in development, 6 exploring, 3 recently shipped), not a live feed, and explicitly avoids internal issue IDs, bug details, dates and promises. Updates require review and re-publication. It is publicly viewable without the separate internal Sales HQ login.

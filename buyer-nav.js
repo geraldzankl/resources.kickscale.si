@@ -12,6 +12,7 @@ function opposite(){
  if(/\/(?:en|de)\/(?:product|produkt)\/?/.test(path))return isDe?'/en/product/':'/de/produkt/';
  if(/\/(?:en|de)\/presentations/.test(path))return '/'+(isDe?'en':'de')+'/presentations/';
  if(/\/(?:en|de)\/roi-calculator/.test(path))return '/'+(isDe?'en':'de')+'/roi-calculator/';
+ if(/\/(?:en|de)\/roadmap/.test(path))return '/'+(isDe?'en':'de')+'/roadmap/';
  if(/\/(?:en|de)\/support/.test(path))return '/'+(isDe?'en':'de')+'/support/';
  if(/\/(?:en|de)\/onboarding/.test(path))return '/'+(isDe?'en':'de')+'/onboarding/';
  if(/\/(?:en\/customers|de\/erfolgsgeschichten)\/?$/.test(path))return isDe?'/en/customers/':'/de/erfolgsgeschichten/';
@@ -62,6 +63,7 @@ function markup(includeLocale){
  '<a class="buyer-mega-discover" href="'+official.overview+'" target="_blank" rel="noopener noreferrer">'+(isDe?'Plattform entdecken':'Explore platform')+' →</a></div></div><div class="buyer-mega-shortcuts">'+shortcut+'</div></div>';
  return '<details class="buyer-menu-group buyer-mega-group" data-buyer-menu><summary>'+(isDe?'Produktinformationen':'Product Information')+'</summary>'+menu+'</details>'+
  '<a href="'+presentations+'">'+(isDe?'Präsentationen & Demos':'Presentations & Demos')+'</a>'+
+ '<a href="/'+lang+'/roadmap/">'+(isDe?'Roadmap':'Roadmap')+'</a>'+
  '<a href="'+roi+'">'+(isDe?'ROI-Rechner':'ROI Calculator')+'</a>'+
  '<a href="'+legal+'" target="_blank" rel="noopener noreferrer">'+(isDe?'Rechtliches & Datenschutz':'Legal & Compliance')+' ↗</a>'+
  (includeLocale?'<span class="buyer-locale"><a href="'+(isDe?opposite():location.pathname)+'"'+(!isDe?' aria-current="true"':'')+'>EN</a><a href="'+(isDe?location.pathname:opposite())+'"'+(isDe?' aria-current="true"':'')+'>DE</a></span>':'');

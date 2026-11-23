@@ -35,6 +35,8 @@ Options -Indexes -MultiViews
   RewriteRule ^(en|de)/(onboarding|support|about)/?$ $1/$2/index.html [END]
   # Buyer information, presentation materials and interactive ROI (both languages).
   RewriteRule ^en/(product|presentations|roi-calculator)/?$ en/$1/index.html [END]
+  RewriteRule ^(en|de)/roadmap/?$ $1/roadmap/index.html [END]
+  RewriteRule ^roadmap/?$ /en/roadmap/ [R=302,L]
   RewriteRule ^de/(produkt|presentations|roi-calculator)/?$ de/$1/index.html [END]
   RewriteRule ^onboarding/?$ /en/onboarding/ [R=302,L]
   RewriteRule ^support/?$ /en/support/ [R=302,L]
