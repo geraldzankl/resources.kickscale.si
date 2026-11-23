@@ -1,0 +1,118 @@
+/* Dedicated, cache-busted product visual: same original Kickscale revenue stack and integration logos.
+   This stylesheet is independent of the general buyer-hub stylesheet to avoid stale cached product layout. */
+.kp-overview {
+  display:block; max-width:100%; box-sizing:border-box; margin:26px 0 32px;
+  padding:clamp(22px,3vw,38px); border:1px solid rgba(43,204,197,.55);
+  border-radius:20px; overflow:hidden; color:#fff;
+  background:radial-gradient(ellipse at 14% 38%,rgba(43,204,197,.14),transparent 58%),
+             linear-gradient(115deg,#030929 5%,#08223d 53%,#064d4e 100%);
+  box-shadow:0 14px 36px rgba(3,9,41,.13);
+}
+.kp-overview,.kp-overview * {box-sizing:border-box}
+.kp-overview .kp-overview-header {
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:14px 24px; margin:0 0 30px; padding:0;
+}
+.kp-overview .kp-overview-header>div {min-width:0;flex:1 1 430px}
+.kp-overview .section-kicker {display:block;color:#2BCCC5;margin:0 0 8px;letter-spacing:.12em;font-weight:850;font-size:11px}
+.kp-overview h2 {color:#fff;font-size:clamp(23px,3vw,35px);line-height:1.18;letter-spacing:-.03em;margin:0}
+.kp-overview .buyer-link {
+  display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+  border:1px solid #55bbb7;border-radius:9px;padding:10px 14px;
+  color:#d3fcf9;text-decoration:none;font-weight:800;font-size:13px;
+  background:rgba(3,9,41,.28);white-space:normal
+}
+.kp-overview .buyer-link:hover {background:#164b54;border-color:#2BCCC5;color:#fff}
+.kp-overview .kp-architecture {
+  display:grid;grid-template-columns:minmax(0, .91fr) minmax(0, 1.09fr);
+  align-items:center;gap:clamp(18px,2.5vw,34px);width:100%;max-width:1090px;margin:0 auto;
+}
+.kp-overview .kp-stack {
+  display:flex;align-items:center;justify-content:center;width:100%;min-width:0;
+  min-height:270px;padding:0;position:relative;
+}
+.kp-overview .kp-stack img {
+  display:block; width:min(100%,440px);max-width:100%;height:auto;
+  max-height:465px;object-fit:contain;object-position:center;
+  filter:drop-shadow(0 0 20px rgba(43,204,197,.22));
+  mix-blend-mode:screen;
+}
+.kp-overview .kp-modules {
+  display:grid;grid-template-columns:1fr;align-content:center;
+  gap:9px;min-width:0;width:100%;margin:0;
+}
+.kp-overview .kp-modules a {
+  display:flex!important;align-items:center;gap:13px;
+  width:100%;min-width:0;min-height:64px;
+  padding:12px 16px!important;
+  color:#fff!important;text-decoration:none!important;
+  background:linear-gradient(96deg,rgba(5,29,57,.95),rgba(3,82,78,.93));
+  border:1px solid rgba(43,204,197,.58);border-radius:12px;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+}
+.kp-overview .kp-modules a:hover {background:#07585b;border-color:#56e2da;transform:translateX(2px)}
+.kp-overview .kp-modules .kp-icon {
+  flex:0 0 30px;width:30px;color:#2BCCC5;font-size:22px;line-height:1;text-align:center
+}
+.kp-overview .kp-modules a span:last-child {display:block;min-width:0;flex:1}
+.kp-overview .kp-modules strong {display:block;color:#fff;font-size:14px;line-height:1.35;font-weight:800}
+.kp-overview .kp-modules small {
+  display:block;color:#c9e4e6;font-size:11px;line-height:1.45;margin-top:3px;
+  white-space:normal;overflow-wrap:break-word
+}
+.kp-overview .kp-connected-label {
+  text-align:center;letter-spacing:.13em;text-transform:uppercase;
+  color:#a1e3e3;font-size:11px;font-weight:850;margin:32px 0 14px
+}
+.kp-overview .kp-integrations {
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:10px;max-width:980px;margin:0 auto
+}
+.kp-overview .kp-integrations a {
+  display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  min-width:0;min-height:88px;padding:13px 9px!important;
+  background:rgba(4,24,49,.85);border:1px solid rgba(43,204,197,.6);
+  border-radius:11px;color:#fff!important;text-decoration:none!important;text-align:center;
+  font-size:11px;line-height:1.35;font-weight:750
+}
+.kp-overview .kp-integrations a:hover {background:#0b3d51;border-color:#5ce8e0}
+.kp-overview .kp-integrations img {display:block;width:30px;height:30px;object-fit:contain;max-width:100%}
+.kp-trust-panel {display:block;margin:0 0 32px;padding:clamp(18px,2.4vw,28px);border:1px solid #dce7ee;border-radius:18px;background:#f5f9fb}
+.kp-trust-panel .section-kicker {display:block;color:#0e8885;letter-spacing:.11em;font-size:11px;font-weight:850;margin:0 0 8px}
+.kp-trust-panel>h2 {font-size:clamp(22px,2.7vw,30px);line-height:1.23;color:#030929;margin:0 0 20px}
+.kp-trust-panel .kp-trust-grid {
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  background:#051531;border:1px solid #1296a1;border-radius:14px;overflow:hidden
+}
+.kp-trust-panel .kp-trust-grid a {
+  display:flex!important;align-items:center;gap:12px;padding:20px 16px!important;
+  min-width:0;color:#fff!important;text-decoration:none!important
+}
+.kp-trust-panel .kp-trust-grid a:hover {background:#10324d}
+.kp-trust-panel .kp-trust-grid a:not(:last-child) {border-right:1px solid rgba(213,238,240,.25)}
+.kp-trust-panel .kp-trust-symbol {color:#2BCCC5;flex:0 0 27px;font-size:25px;line-height:1;text-align:center}
+.kp-trust-panel .kp-trust-grid a span:last-child {display:block;min-width:0}
+.kp-trust-panel .kp-trust-grid strong {display:block;color:#fff;font-size:14px;line-height:1.3}
+.kp-trust-panel .kp-trust-grid small {display:block;color:#c6dbe4;font-size:11px;line-height:1.5}
+.kp-trust-panel .kp-trust-note {color:#657589;font-size:12px;line-height:1.55;margin:14px 0 0}
+@media (max-width:850px) {
+  .kp-overview .kp-architecture {grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:15px}
+  .kp-overview .kp-integrations {grid-template-columns:repeat(3,minmax(0,1fr))}
+  .kp-trust-panel .kp-trust-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kp-trust-panel .kp-trust-grid a:nth-child(2) {border-right:0}
+  .kp-trust-panel .kp-trust-grid a:nth-child(-n+2) {border-bottom:1px solid rgba(213,238,240,.25)}
+}
+@media (max-width:640px) {
+  .kp-overview {padding:20px 16px;margin:20px 0 27px}
+  .kp-overview .kp-overview-header {margin-bottom:18px}
+  .kp-overview .kp-architecture {grid-template-columns:minmax(0,1fr);gap:8px}
+  .kp-overview .kp-stack {min-height:200px}
+  .kp-overview .kp-stack img {width:min(100%,340px);max-height:300px}
+  .kp-overview .kp-modules a {min-height:56px;padding:10px 12px!important}
+  .kp-overview .kp-connected-label {margin-top:25px}
+  .kp-overview .kp-integrations {grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .kp-overview .kp-integrations a {min-height:76px}
+  .kp-trust-panel .kp-trust-grid a {padding:14px 10px!important;gap:8px}
+  .kp-trust-panel .kp-trust-grid strong {font-size:12px}
+  .kp-trust-panel .kp-trust-symbol {font-size:21px;flex-basis:23px}
+}
