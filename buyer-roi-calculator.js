@@ -160,6 +160,7 @@ sectionStart('investment','04',t.sectionInvestment,t.investmentDesc,t.investment
 renderRows();
 renderResults();
 refreshSetup();
+if(typeof window.kickscaleRenderBuyerNav==='function') window.kickscaleRenderBuyerNav();
 }
 function workflowRow(w){
 const rid=String(w.id);
