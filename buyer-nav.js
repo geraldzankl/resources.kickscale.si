@@ -36,7 +36,7 @@ function markup(includeLocale){
 function renderBuyerNav(){
 const nav=document.querySelector('header .topbar nav.nav') || document.querySelector('header nav#nav');
 if(nav){
- const includeLocale=nav.classList.contains('nav');
+ const includeLocale=nav.classList.contains('nav') && !document.querySelector('header .locale');
  nav.classList.add('buyer-global-nav');
  nav.innerHTML=markup(includeLocale);
 }
