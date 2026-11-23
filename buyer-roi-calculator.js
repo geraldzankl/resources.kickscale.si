@@ -115,8 +115,8 @@ function updateScenario(field,n){
 }
 function renderShell(){
 document.getElementById('roiApp').innerHTML=nav()+
-'<div class="hero"><div class="shell hero-content"><div><p class="eyebrow">✦ &nbsp; '+t.internal+'</p><h1>'+t.title+'</h1><p class="lead">'+t.lead+'</p></div><div class="hero-actions"><button class="btn btn-primary" data-action="preset">'+t.preset+'</button><button class="btn btn-secondary" data-action="blank">'+t.blank+'</button></div></div></div>'+
-'<main class="shell main"><div class="top-metrics" aria-label="'+t.source+'">'+
+'<div class="hero"><div class="shell hero-content"><div><p class="eyebrow">✦ &nbsp; '+t.internal+'</p><h1>'+t.title+'</h1><p class="lead">'+t.lead+'</p></div><div class="hero-actions"><span class="scenario-presets-label">'+t.preset+'</span><button class="btn btn-primary" data-action="scenario" data-count="10">10 Sales Reps</button><button class="btn btn-primary" data-action="scenario" data-count="50">50 Sales Reps</button><button class="btn btn-primary" data-action="scenario" data-count="200">200 Sales Reps</button><button class="btn btn-secondary" data-action="blank">'+t.blank+'</button></div></div></div>'+
+'<main class="shell main">'+renderSetup()+'<div class="top-metrics" aria-label="'+t.source+'">'+
 '<div class="metric teal"><small>'+t.crmMetric+'</small><strong id="metricCRM">—</strong><span>'+t.value+'</span></div>'+
 '<div class="metric yellow"><small>'+t.agentMetric+'</small><strong id="metricAgent">—</strong><span>'+t.value+'</span></div>'+
 '<div class="metric pink"><small>'+t.coachMetric+'</small><strong id="metricCoach">—</strong><span>'+t.arr+'</span></div>'+
@@ -124,7 +124,7 @@ document.getElementById('roiApp').innerHTML=nav()+
 '<div class="intro-bar"><div><p class="eyebrow">'+t.source+'</p><h2>'+t.intro+'</h2><p>'+t.introText+'</p></div><span class="pill">✓ '+t.assumptions+'</span></div>'+
 '<div class="working-grid"><div class="work-left">'+
 sectionStart('crm', '01',t.sectionCRM,t.crmDesc,t.included,'crm')+
-'<div class="field-grid">'+input('calls',t.calls)+input('minutesCall',t.minutesCall,'0.25')+input('hourly',t.hourly,'0.5')+'</div>'+
+'<div class="field-grid crm-fields"><div class="field"><label>'+t.meetings+'</label><input id="crm-meetings-count" type="number" readonly value="'+state.meetings+'"></div><div class="field"><label>'+t.calls+'</label><input id="crm-calls-count" type="number" readonly value="'+state.calls+'"></div>'+input('minutesMeeting',t.minutesMeeting,'0.25')+input('minutesCall',t.minutesCall,'0.25')+input('hourly',t.hourly,'0.5')+'</div>'+
 '<div class="calc-inline"><span>'+t.crmValue+'<br><small id="crm-hours">—</small></span><strong id="crm-value">—</strong></div><p class="formula">'+t.crmFormula+'</p></div></section>'+
 sectionStart('agents','02',t.sectionAgent,t.agentDesc,t.paid,'agents')+
 '<div class="workflow-header"><div><h4>'+t.workflows+'</h4><p>'+t.workflowDesc+'</p></div><button class="btn btn-add" data-action="add">＋ '+t.newWorkflow+'</button></div>'+
@@ -133,10 +133,10 @@ sectionStart('agents','02',t.sectionAgent,t.agentDesc,t.paid,'agents')+
 '<div class="workflow-total"><div><small>'+t.workflowRuns+'</small><strong id="runs-total">—</strong></div><div><small>'+t.workflowTime+'</small><strong id="agent-hours-total">—</strong></div><div><small>'+t.workflowValue+'</small><strong id="agent-value-total">—</strong></div></div>'+
 '<div class="calc-inline yellow"><span>'+t.runCost+'</span><strong id="agent-spend">—</strong></div><p class="warning">⚠ '+t.overlap+'</p></div></section>'+
 sectionStart('coaching','03',t.sectionCoach,t.coachDesc,t.scenario,'coaching')+
-'<div class="field-grid four">'+input('closers',t.closingReps)+input('winsRep',t.winsRep)+input('perWin',t.perWin)+input('winUplift',t.winUplift,'0.1')+'</div>'+
+'<div class="field-grid four"><div class="field"><label>'+t.closingReps+'</label><div class="scenario-readonly" id="coach-reps-number">'+integer(state.users)+'</div></div>'+input('winsRep',t.winsRep)+input('perWin',t.perWin)+input('winUplift',t.winUplift,'0.1')+'</div>'+
 '<div class="calc-inline pink"><span>'+t.coachValue+'</span><strong id="coach-value">—</strong></div><p class="coaching-note">'+t.coachNote+'</p></div></section>'+
 sectionStart('investment','04',t.sectionInvestment,t.investmentDesc,t.investmentTag,'investment')+
-'<div class="field-grid two">'+input('platform',t.platform)+
+'<div class="field-grid two"><div class="field"><label>'+t.platform+'</label><input id="input-platform" type="text" readonly value="'+money(state.platform)+'"><small id="platform-formula">'+t.platformFormula+' = '+money(state.platform)+'</small></div>'+
 '<div class="field"><label>'+t.agentRunPrice+'</label><input value="'+exact(.9)+'" readonly aria-readonly="true"></div></div>'+
 '<div class="calc-inline"><span>'+t.totalInvestment+'</span><strong id="investment-total">—</strong></div></div></section>'+
 '</div>'+
@@ -159,7 +159,7 @@ sectionStart('investment','04',t.sectionInvestment,t.investmentDesc,t.investment
 '<footer class="footer"><div class="shell footer-inner"><span>'+t.footer+'</span><a href="https://resources.kickscale.si/'+lang+'/" target="_blank" rel="noopener noreferrer">'+t.resource+' ↗</a></div></footer>';
 renderRows();
 renderResults();
-initHoverRoi();
+refreshSetup();
 }
 function workflowRow(w){
 const rid=String(w.id);
