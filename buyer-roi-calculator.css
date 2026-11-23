@@ -12,3 +12,47 @@
 @media(max-width:1170px){.nav{gap:2px}.nav a{font-size:12px;padding:9px}.wordmark img{width:130px}.working-grid{grid-template-columns:minmax(0,1.6fr) minmax(275px,.9fr)}.section-inner{padding:22px}.workflow-table{min-width:650px}}@media(max-width:990px){.header-row{flex-wrap:wrap;padding:16px 0;min-height:0}.nav{order:3;width:100%;overflow-x:auto}.hero-content{display:block}.hero-actions{justify-content:flex-start;margin-top:25px}.working-grid{grid-template-columns:1fr}.summary{position:relative;top:0}.summary-inner{padding:24px}.top-metrics{grid-template-columns:repeat(2,1fr)}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid #e2e7ef}}@media(max-width:650px){.shell{width:min(100% - 32px,1250px)}.hero{padding:42px 0 75px}.hero h1{font-size:37px}.top-metrics{grid-template-columns:1fr 1fr}.metric{padding:15px 14px}.metric small{font-size:10px;min-height:39px}.metric strong{font-size:25px}.metric span{font-size:11px}.intro-bar{display:block;margin-top:34px}.intro-bar .pill{margin-top:10px}.field-grid,.field-grid.two,.field-grid.four{grid-template-columns:1fr 1fr}.section-heading{gap:10px}.section-heading h3{font-size:18px}.mini-tag{margin-left:0}.section-heading{flex-wrap:wrap}.workflow-total{grid-template-columns:1fr 1fr}.method-grid{grid-template-columns:1fr}.summary-inner{padding:18px}.wordmark{gap:11px}.wordmark span{padding-left:10px;font-size:10px}.wordmark img{width:118px}}@media(max-width:420px){.field-grid,.field-grid.two,.field-grid.four{grid-template-columns:1fr}.hero h1{font-size:33px}.top-metrics{grid-template-columns:1fr 1fr}.metric strong{font-size:23px}.workflow-total{grid-template-columns:1fr}.section-inner{padding:19px}.section-heading .mini-tag{order:2}.summary-actions{grid-template-columns:1fr}}
 @media print{.site-header,.hero-actions,.summary-actions,.workflow-bottom .btn-add,.btn-remove,.footer{display:none!important}.hero{padding:14px 0 54px}.working-grid{grid-template-columns:1fr}.summary{position:static;break-inside:avoid}.section{break-inside:avoid}.main{margin-top:0}.metric{padding:12px}.methodology{break-before:page}body{background:white}.summary{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 \n/* External buyer-facing calculator */\n.site-header .header-row{flex-wrap:wrap;gap:14px}.site-header .nav{margin-left:auto;flex-wrap:wrap}.site-header .buyer-global-nav{gap:4px}.site-header .buyer-global-nav>a,.site-header .buyer-menu-group>summary{font-size:12px!important}.site-header .locale{flex-shrink:0}.hero-content{align-items:flex-start}.summary .over{color:#a2eae4}.summary{top:16px}@media(max-width:980px){.site-header .nav{width:100%;order:3;margin-left:0}.site-header .header-row{padding:15px 0}.hero-content{flex-direction:column}.hero-actions{justify-content:flex-start;margin-top:12px}}\n
+/* Buyer ROI calculator: team scenarios and monthly activity */
+.hero-actions{align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:9px}
+.scenario-presets-label{font-size:12px;font-weight:800;color:#d8e8ed;margin-right:4px}
+.hero-actions .btn{white-space:nowrap}
+.scenario-setup{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.9fr);gap:16px;margin:0 0 22px;position:relative;z-index:2}
+.setup-panel{background:#0f253f;color:#fff;border:1px solid #2BCCC5;border-radius:16px;padding:23px 25px;min-width:0;box-shadow:0 14px 30px #08132e16}
+.setup-title{display:flex;gap:16px;align-items:start;margin-bottom:18px}
+.setup-title p{margin:0 0 5px;color:#45dfd8;font-size:12px;letter-spacing:.075em;font-weight:850}
+.setup-title span{font-size:13px;color:#cfdae5;line-height:1.5}
+.scenario-user{background:#132f4b;border:1px solid #365b78;border-radius:11px;padding:14px;margin-bottom:15px}
+.scenario-label{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:11px}
+.scenario-label strong{font-size:13px;font-weight:800;color:white}
+.scenario-label span{font-size:12px;color:#65e4de;font-weight:800;text-align:right}
+.scenario-user-controls{display:flex;align-items:center;gap:15px}
+.scenario-user-controls input[type=range]{flex:1;min-width:0}
+.scenario-user-controls input[type=number]{width:100px}
+.scenario-setup input[type=range]{accent-color:#2BCCC5;cursor:pointer}
+.scenario-setup input[type=number]{background:#071535;color:#fff;border:1px solid #2BCCC5;border-radius:8px;padding:10px 12px;font-size:18px;font-weight:800;max-width:100%}
+.scenario-intensity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.scenario-intensity{border:1px solid #385776;border-radius:11px;background:#142b46;padding:15px;min-width:0}
+.scenario-intensity input[type=range]{display:block;width:100%;margin:15px 0 8px}
+.scenario-levels{display:flex;justify-content:space-between;gap:3px;color:#aabed1;font-size:10px}
+.scenario-specific{display:flex;flex-direction:column;gap:7px;margin-top:14px}
+.scenario-specific label{font-size:11px;font-weight:700;color:#d9e5ed}
+.scenario-specific input{width:100%}
+.scenario-activity-totals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:14px}
+.scenario-activity-totals>div{border:1px solid #37607c;background:#0b2038;border-radius:10px;padding:13px 15px}
+.scenario-activity-totals small{display:block;color:#a3c6cd;font-size:11px;line-height:1.4}
+.scenario-activity-totals strong{display:block;color:white;font-size:23px;margin-top:3px;letter-spacing:-.025em}
+.scenario-disclaimer{margin:13px 0 0;color:#b9c7da;line-height:1.5;font-size:11px}
+.scenario-modules{display:flex;flex-direction:column;gap:10px}
+.scenario-module{display:flex;align-items:center;gap:13px;border:1px solid #365979;background:#123047;color:#fff;border-radius:10px;padding:14px;cursor:pointer;min-height:58px}
+.scenario-module:hover{border-color:#2BCCC5}
+.scenario-module input{width:18px;height:18px;accent-color:#2BCCC5;flex-shrink:0}
+.scenario-module span{font-weight:760;font-size:13px;line-height:1.4}
+.field-grid.crm-fields{grid-template-columns:repeat(3,minmax(0,1fr))}
+.field-grid.crm-fields .field input[readonly],#input-platform[readonly]{background:#edf5f9;color:#203451;border-color:#dbe3ec}
+.scenario-readonly{display:flex;align-items:center;height:46px;padding:0 13px;border:1px solid #dbe3ec;border-radius:9px;background:#edf5f9;font-weight:800;color:#203451;font-size:18px}
+#platform-formula{display:block;font-size:12px;margin-top:6px;color:#61718b}
+.workflow-table input[readonly]{background:#edf5f9;color:#61718b;border:1px solid #dbe3ec;cursor:default}
+.buyer-video-external{display:inline-flex;margin-top:9px;color:#0b7772;font-size:13px;font-weight:800}
+@media(max-width:1100px){.scenario-setup{grid-template-columns:1fr 1fr}.field-grid.crm-fields{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:850px){.scenario-setup{grid-template-columns:1fr}}
+@media(max-width:560px){.setup-panel{padding:18px 16px}.scenario-intensity-grid,.scenario-activity-totals{grid-template-columns:1fr}.field-grid.crm-fields{grid-template-columns:1fr 1fr}.hero-actions .btn{font-size:12px;padding:9px 11px}.scenario-user-controls input[type=number]{width:86px}}
