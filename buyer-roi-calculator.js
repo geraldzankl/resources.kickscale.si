@@ -59,6 +59,60 @@ function initHoverRoi(){
  document.addEventListener('pointerdown',e=>{if(!e.target.closest('.hq-roi-group'))menus.forEach(x=>x.open=false)});
 }
 
+
+function levelSlider(kind){
+ const meeting=kind==='meetings',level=meeting?state.meetingsLevel:state.callsLevel;
+ const key=meeting?'meetingsPerUser':'callsPerUser';
+ const name=meeting?t.meetingsIntensity:t.callsIntensity;
+ const levels=meeting?MEETING_LEVELS:CALL_LEVELS;
+ const weekly=meeting?t.meetingsWeekly:t.callsWeekly;
+ const text=level===0?t.custom:levelLabel(level)+' · '+levels[level-1]+' '+weekly;
+ return '<div class="scenario-intensity"><div class="scenario-label"><strong>'+name+'</strong><span id="level-'+kind+'">'+text+'</span></div>'+
+ '<input type="range" min="1" max="4" step="1" data-intensity="'+kind+'" value="'+(level||2)+'" aria-label="'+name+'">'+
+ '<div class="scenario-levels"><span>'+t.low+'</span><span>'+t.medium+'</span><span>'+t.high+'</span><span>'+t.veryHigh+'</span></div>'+
+ '<div class="scenario-specific"><label for="input-'+key+'">'+(meeting?t.meetingsPerRep:t.callsPerRep)+'</label><input id="input-'+key+'" type="number" min="0" step="1" data-field="'+key+'" value="'+state[key]+'"></div></div>';
+}
+function renderSetup(){
+ const modules=[['capture',t.moduleCapture],['assistant',t.moduleAssistant],['coach',t.moduleCoach],['intelligence',t.moduleIntel],['agents',t.moduleAgents]];
+ return '<div class="scenario-setup" id="setup"><section class="setup-panel">'+
+ '<div class="setup-title"><div><p>'+t.step1+'</p><span>'+t.step1Desc+'</span></div></div>'+
+ '<div class="scenario-user"><div class="scenario-label"><strong>'+t.users+'</strong><span id="usersBadge">'+integer(state.users)+'</span></div>'+
+ '<div class="scenario-user-controls"><input id="usersRange" data-users-range type="range" min="0" max="200" step="1" value="'+state.users+'" aria-label="'+t.users+'">'+
+ '<input id="input-users" data-field="users" type="number" min="0" max="1000" step="1" value="'+state.users+'" aria-label="'+t.users+'"></div></div>'+
+ '<div class="scenario-intensity-grid">'+levelSlider('meetings')+levelSlider('calls')+'</div>'+
+ '<div class="scenario-activity-totals"><div><small>'+t.totalMeetings+'</small><strong id="step-total-meetings">'+integer(state.meetings)+'</strong></div>'+
+ '<div><small>'+t.totalCalls+'</small><strong id="step-total-calls">'+integer(state.calls)+'</strong></div></div>'+
+ '<p class="scenario-disclaimer">'+t.intensityNote+'</p></section>'+
+ '<section class="setup-panel"><div class="setup-title"><div><p>'+t.step2+'</p><span>'+t.step2Desc+'</span></div></div>'+
+ '<div class="scenario-modules">'+modules.map(([key,label])=>'<label class="scenario-module"><input type="checkbox" data-module="'+key+'"'+(state.modules[key]?' checked':'')+'><span>'+label+'</span></label>').join('')+'</div>'+
+ '<p class="scenario-disclaimer">'+t.modulesNote+'</p></section></div>';
+}
+function refreshSetup(){
+ const value=(id,v)=>{const el=document.getElementById(id);if(el&&document.activeElement!==el)el.value=v};
+ const label=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v};
+ value('usersRange',Math.min(200,state.users));value('input-users',state.users);
+ value('input-meetingsPerUser',state.meetingsPerUser);value('input-callsPerUser',state.callsPerUser);
+ value('crm-meetings-count',state.meetings);value('crm-calls-count',state.calls);
+ value('input-platform',money(state.platform));
+ label('usersBadge',integer(state.users));
+ label('step-total-meetings',integer(state.meetings));
+ label('step-total-calls',integer(state.calls));
+ for(const kind of ['meetings','calls']){
+  const level=kind==='meetings'?state.meetingsLevel:state.callsLevel;
+  const arr=kind==='meetings'?MEETING_LEVELS:CALL_LEVELS;
+  label('level-'+kind,level===0?t.custom:levelLabel(level)+' · '+arr[level-1]+' '+(kind==='meetings'?t.meetingsWeekly:t.callsWeekly));
+  const slider=document.querySelector('[data-intensity="'+kind+'"]');
+  if(slider&&document.activeElement!==slider)slider.value=level||2;
+ }
+ label('platform-formula',t.platformFormula+' = '+money(state.platform));
+ label('coach-reps-number',integer(state.users));
+}
+function updateScenario(field,n){
+ if(field==='users')state.users=val(n);
+ if(field==='meetingsPerUser'){state.meetingsPerUser=val(n);state.meetingsLevel=0;}
+ if(field==='callsPerUser'){state.callsPerUser=val(n);state.callsLevel=0;}
+ syncDependent();refreshSetup();renderRows();renderResults();
+}
 function renderShell(){
 document.getElementById('roiApp').innerHTML=nav()+
 '<div class="hero"><div class="shell hero-content"><div><p class="eyebrow">✦ &nbsp; '+t.internal+'</p><h1>'+t.title+'</h1><p class="lead">'+t.lead+'</p></div><div class="hero-actions"><button class="btn btn-primary" data-action="preset">'+t.preset+'</button><button class="btn btn-secondary" data-action="blank">'+t.blank+'</button></div></div></div>'+
