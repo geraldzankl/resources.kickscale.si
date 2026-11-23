@@ -157,3 +157,17 @@ header:has(.buyer-global-nav) .hero{z-index:0!important}
 .kp-trust-note{color:#62748a;font-size:12px;margin:12px 0 0}
 @media(max-width:790px){.kp-overview .kp-architecture{grid-template-columns:1fr}.kp-stack{min-height:190px}.kp-stack img{max-height:290px}.kp-trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kp-trust-grid a:nth-child(2){border-right:0}.kp-trust-grid a:nth-child(-n+2){border-bottom:1px solid #60718288}}
 @media(max-width:470px){.kp-overview,.kp-trust-panel{padding:16px}.kp-trust-grid a{padding:14px 10px;gap:8px}.kp-trust-grid strong{font-size:12px}.kp-integrations a{min-width:calc(50% - 10px)}}
+
+/* Quick-link PDF resource directory */
+.buyer-pdf-jumps{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 28px;align-items:center}
+.buyer-pdf-jumps a{display:inline-flex;border:1px solid #d7e6ea;border-radius:9px;padding:10px 13px;background:#f1f8f9;color:#066d71;text-decoration:none;font-size:13px;font-weight:800}
+.buyer-pdf-jumps a:hover{border-color:#2BCCC5;background:#e1f8f5}
+.buyer-pdf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.buyer-pdf-card{display:flex;align-items:center;gap:15px;border:1px solid #dce7ed;background:#fff;border-radius:13px;padding:18px;text-decoration:none;min-height:104px;box-shadow:0 8px 23px #03092908}
+.buyer-pdf-card:hover{border-color:#2BCCC5;box-shadow:0 11px 28px #0309291b}
+.buyer-pdf-icon{display:grid;place-items:center;background:#e4f7f5;border-radius:9px;min-width:43px;height:45px;color:#057d79;font-weight:900;font-size:12px}
+.buyer-pdf-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:3px}
+.buyer-pdf-copy strong{color:#030929;font-size:16px}
+.buyer-pdf-copy small{color:#687991;font-size:12px}
+.buyer-pdf-open{font-size:12px;font-weight:800;color:#0b817e;white-space:nowrap}
+@media(max-width:650px){.buyer-pdf-grid{grid-template-columns:1fr}.buyer-pdf-card{padding:14px;gap:11px}}
