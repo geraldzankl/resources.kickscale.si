@@ -83,3 +83,11 @@ The resources remain publicly readable. No `noindex` directive is a security con
 - Linked default agents: SDR→AE runs/year = monthly calls × 12, with 10 minutes/run; Sales→CS runs/year = monthly meetings × 12, with 20 minutes/run. More workflows can be added manually.
 - AI Coaching uses the top-level user count and a 10% relative closing uplift. Platform licensing is computed as users × €99/month × 12; each agent run costs €0.90. Product-module selections control included estimate components. Forecasting/Intelligence has no separate quantified ROI component. Figures remain examples, not guarantees.
 - Source-level JavaScript syntax and calculator formula/preset tests passed in English and German. Production Hostinger deploy and visual browser QA remain unverified.
+
+## Product visuals, navigation and ROI consolidation — November 23, 2026
+
+- The ROI Calculator now exposes **one AI Assistant module** combining meeting capture/notes (15 minutes per meeting by default) with CRM/follow-up work (3 minutes per call). Both time-savings components toggle together. The internal Pricing Calculator at `sales.kickscale.si` is unchanged.
+- Product Information in EN/DE includes a Kickscale platform-layer illustration, five connected capabilities, integration shortcuts, and the four trust badges from the supplied Kickscale screenshot: ISO 27001 certified, GDPR/DSGVO, EU hosting (Germany), and EU AI Act. Trust claims link to the Kickscale legal pages for detailed status and scope. The image is loaded from the existing public Kickscale website `https://kickscale.si/assets/revenue-stack-cropped.webp`.
+- The Product Information navigation uses a large bilingual mega-menu inspired by the existing Kickscale website. It links module items directly to `www.kickscale.com` product routes (based on the parallel Kickscale PHP site's route definitions), integration and release pages, Help Center, and legal docs. These external destinations were not HTTP-verified from the execution environment; manually verify after Hostinger deployment.
+- `Presentations & Demos` / `Präsentationen & Demos` is the title in the shared navigation, homepage cards and presentation pages.
+- Static JavaScript syntax, ROI module-off/on calculations in both languages and source-level page checks passed. Browser visual QA and Hostinger publication remain to be confirmed.
