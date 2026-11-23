@@ -164,7 +164,7 @@ refreshSetup();
 function workflowRow(w){
 const rid=String(w.id);
 return '<tr data-row="'+rid+'"><td><input type="text" maxlength="90" data-agent-id="'+rid+'" data-prop="name" value="'+safe(w.name)+'" aria-label="'+t.workflowName+'"></td>'+
-'<td><input type="number" min="0" step="1" data-agent-id="'+rid+'" data-prop="runs" value="'+w.runs+'" aria-label="'+t.yearlyRuns+'"></td>'+
+'<td><input type="number" min="0" step="1" data-agent-id="'+rid+'" data-prop="runs" value="'+w.runs+'" aria-label="'+t.yearlyRuns+'"'+(w.kind?' readonly title="'+t.annualRunsLinked+'"':'')+'></td>'+
 '<td><input type="number" min="0" step="0.25" data-agent-id="'+rid+'" data-prop="minutes" value="'+w.minutes+'" aria-label="'+t.minutesRun+'"></td>'+
 '<td class="workflow-hours" id="row-hours-'+rid+'">—</td>'+
 '<td class="workflow-value" id="row-value-'+rid+'">—</td>'+
@@ -172,16 +172,18 @@ return '<tr data-row="'+rid+'"><td><input type="text" maxlength="90" data-agent-
 }
 function renderRows(){document.getElementById('workflow-rows').innerHTML=state.workflows.map(workflowRow).join('')}
 function estimate(){
-const crmHours=state.calls*state.minutesCall*12/60;
+const meetingHours=(state.modules.capture?state.meetings*state.minutesMeeting*12/60:0);
+const callHours=(state.modules.assistant?state.calls*state.minutesCall*12/60:0);
+const crmHours=meetingHours+callHours;
 const crm=crmHours*state.hourly;
 let annualRuns=0,agentHours=0;
-for(const wf of state.workflows){annualRuns+=val(wf.runs);agentHours+=val(wf.runs)*val(wf.minutes)/60}
+if(state.modules.agents)for(const wf of state.workflows){annualRuns+=val(wf.runs);agentHours+=val(wf.runs)*val(wf.minutes)/60}
 const agents=agentHours*state.hourly;
 const agentCost=annualRuns*.90;
 const investment=agentCost+state.platform;
 const timeValue=crm+agents;
 const multiple=investment>0?timeValue/investment:null;
-const coach=state.closers*state.winsRep*12*state.perWin*state.winUplift/100;
+const coach=state.modules.coach?state.users*state.winsRep*12*state.perWin*state.winUplift/100:0;
 return {crmHours,crm,annualRuns,agentHours,agents,agentCost,investment,timeValue,multiple,coach};
 }
 function setText(id,value){const el=document.getElementById(id);if(el)el.textContent=value}
@@ -203,15 +205,31 @@ return 'KICKSCALE ROI CALCULATOR\n'+rows.join('\n')+'\n\n'+state.workflows.map(w
 function getFormField(key){const el=document.getElementById('input-'+key);return el?val(el.value):0}
 function updateField(el){
 const field=el.dataset.field;
-if(field){state[field]=val(el.value);renderResults();return}
+if(field){
+ if(['users','meetingsPerUser','callsPerUser'].includes(field)){updateScenario(field,el.value);return}
+ state[field]=val(el.value);renderResults();return
+}
 const wid=el.dataset.agentId,prop=el.dataset.prop;if(!wid||!prop)return;
 const w=state.workflows.find(w=>String(w.id)===wid);if(!w)return;
+if(w.kind&&prop==='runs')return;
 w[prop]=prop==='name'?el.value:val(el.value);renderResults();
 }
 const app=document.getElementById('roiApp');
-app.addEventListener('input',event=>{const el=event.target.closest('[data-field],[data-agent-id]');if(el)updateField(el)});
+app.addEventListener('input',event=>{
+ const el=event.target;
+ if(el.matches('[data-users-range]')){updateScenario('users',el.value);return}
+ if(el.matches('[data-intensity]')){
+  const kind=el.dataset.intensity,level=Number(el.value);
+  if(kind==='meetings'){state.meetingsLevel=level;state.meetingsPerUser=MEETING_LEVELS[level-1]*4}
+  if(kind==='calls'){state.callsLevel=level;state.callsPerUser=CALL_LEVELS[level-1]*4}
+  syncDependent();refreshSetup();renderRows();renderResults();return;
+ }
+ if(el.matches('[data-module]')){state.modules[el.dataset.module]=el.checked;renderResults();return}
+ const fieldEl=el.closest('[data-field],[data-agent-id]');
+ if(fieldEl)updateField(fieldEl);
+});
 app.addEventListener('click',async event=>{const btn=event.target.closest('[data-action]');if(!btn)return;const action=btn.dataset.action;
-if(action==='preset'||action==='blank'){state=action==='preset'?initial():zero();renderShell();return}
+if(action==='scenario'||action==='blank'){state=action==='blank'?zero():makeState(Number(btn.dataset.count)||50);renderShell();return}
 if(action==='add'){seq++;const w={id:seq,name:t.workflowNew,runs:0,minutes:5};state.workflows.push(w);renderRows();renderResults();const nameInput=app.querySelector('input[data-agent-id="'+seq+'"][data-prop="name"]');if(nameInput){nameInput.focus();nameInput.select()}return}
 if(action==='remove'){state.workflows=state.workflows.filter(w=>String(w.id)!==btn.dataset.id);renderRows();renderResults();return}
 if(action==='print'){window.print();return}
