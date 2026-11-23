@@ -33,6 +33,7 @@ function markup(includeLocale){
  '<a href="'+legal+'" target="_blank" rel="noopener noreferrer">'+(isDe?'Rechtliches & Datenschutz':'Legal & Compliance')+' ↗</a>'+
  (includeLocale?'<span class="buyer-locale"><a href="'+(isDe?opposite():location.pathname)+'"'+(!isDe?' aria-current="true"':'')+'>EN</a><a href="'+(isDe?location.pathname:opposite())+'"'+(isDe?' aria-current="true"':'')+'>DE</a></span>':'');
 }
+function renderBuyerNav(){
 const nav=document.querySelector('header .topbar nav.nav') || document.querySelector('header nav#nav');
 if(nav){
  const includeLocale=nav.classList.contains('nav');
@@ -61,4 +62,7 @@ if(search){
  document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();search.focus();}});
  filter();
 }
+}
+window.kickscaleRenderBuyerNav=renderBuyerNav;
+renderBuyerNav();
 })();
