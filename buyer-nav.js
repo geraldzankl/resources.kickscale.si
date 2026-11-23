@@ -42,7 +42,7 @@ if(nav){
 const menus=[...document.querySelectorAll('[data-buyer-menu]')];
 for(const menu of menus){
  menu.addEventListener('pointerenter',()=>{if(matchMedia('(hover:hover) and (pointer:fine)').matches){menus.forEach(o=>{if(o!==menu)o.open=false});menu.open=true;}});
- menu.addEventListener('pointerleave',()=>{if(matchMedia('(hover:hover) and (pointer:fine)').matches)menu.open=false;});
+ menu.addEventListener('pointerleave',e=>{if(matchMedia('(hover:hover) and (pointer:fine)').matches && !menu.contains(e.relatedTarget))menu.open=false;});
  menu.addEventListener('focusout',e=>{if(!menu.contains(e.relatedTarget))menu.open=false});
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')menus.forEach(m=>m.open=false)});
