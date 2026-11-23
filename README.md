@@ -72,3 +72,14 @@ The buyer-facing header navigation is shared across the overview, product, prese
 The new static assets are `buyer-hub.css`, `buyer-nav.js`, `buyer-roi-calculator.js`, `buyer-roi-calculator.css`. Hostinger `.htaccess` has matching explicit rewrite rules. Changes are committed to GitHub main, but live Hostinger deployment is **not verified** in the current execution environment. Verify auto-deploy or redeploy `main` in Hostinger; check navigation, locale links, media embeds, ROI interaction, and language-specific legal links after publication.
 
 The resources remain publicly readable. No `noindex` directive is a security control. Do not publish customer-specific negotiated pricing, internal credentials or confidential attachments in these static files.
+
+## Buyer experience and ROI refinements — November 23, 2026
+
+- Product Information dropdown is rendered above hero copy and has no trigger-to-panel gap; closing happens after leaving the entire group. Shared navigation can reinitialize after calculator presets change.
+- Presentation videos are vertically stacked, lazy-loaded, without autoplay permission; the original frames are zoomed/cropped to reduce letterboxing. Uncropped player links are available for large-screen viewing. The "Weitere Unterlagen / Additional materials" section is removed.
+- ROI calculator `/en/roi-calculator/` and `/de/roi-calculator/` now have Step 1 (users, meeting and call intensity sliders and editable per-rep/month values) and Step 2 (five module checkboxes without product prices), followed by the existing CRM, Agent, Coaching and Investment sections.
+- Meeting intensity: 5/10/20/40 meetings per rep/week; call intensity: 10/20/40/80 completed calls per rep/week. These are illustrative B2B customer-interaction scenarios; four weeks/month map the medium level to 40 meetings and 80 calls per rep/month. A link to the 2025 Bridge Group SDR benchmark explains why medium calls are approximately 20/week. This is not a standard for all seller roles or for attempted dials.
+- 10/50/200-rep scenario buttons and "start from zero" reset the model. Default 50 users, 40 meetings/month/user and 80 calls/month/user; CRM savings are 15 minutes/meeting and 3 minutes/call; hourly value €40 is editable.
+- Linked default agents: SDR→AE runs/year = monthly calls × 12, with 10 minutes/run; Sales→CS runs/year = monthly meetings × 12, with 20 minutes/run. More workflows can be added manually.
+- AI Coaching uses the top-level user count and a 10% relative closing uplift. Platform licensing is computed as users × €99/month × 12; each agent run costs €0.90. Product-module selections control included estimate components. Forecasting/Intelligence has no separate quantified ROI component. Figures remain examples, not guarantees.
+- Source-level JavaScript syntax and calculator formula/preset tests passed in English and German. Production Hostinger deploy and visual browser QA remain unverified.
