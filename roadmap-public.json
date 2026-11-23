@@ -1,0 +1,175 @@
+{
+  "reviewed": "2026-11-23",
+  "source": "Curated customer-facing Linear snapshot",
+  "items": [
+    {
+      "id": "roadmap-1",
+      "stage": "building",
+      "category": "agents",
+      "title": {
+        "en": "Automation run transparency",
+        "de": "Transparente Agenten-Runs"
+      },
+      "description": {
+        "en": "Understand when automations are running, finished or need your approval.",
+        "de": "Erkennen, ob Automationen laufen, abgeschlossen sind oder eine Freigabe benötigen."
+      }
+    },
+    {
+      "id": "roadmap-2",
+      "stage": "building",
+      "category": "crm",
+      "title": {
+        "en": "More flexible HubSpot workflows",
+        "de": "Flexiblere HubSpot-Workflows"
+      },
+      "description": {
+        "en": "Connect conversation insights with configurable CRM actions.",
+        "de": "Gesprächs-Insights mit konfigurierbaren CRM-Aktionen verbinden."
+      }
+    },
+    {
+      "id": "roadmap-3",
+      "stage": "building",
+      "category": "agents",
+      "title": {
+        "en": "AI-assisted platform configuration",
+        "de": "KI-unterstützte Plattformkonfiguration"
+      },
+      "description": {
+        "en": "Simplify the setup of meeting types and AI automations.",
+        "de": "Meeting-Typen und KI-Automationen einfacher konfigurieren."
+      }
+    },
+    {
+      "id": "roadmap-4",
+      "stage": "building",
+      "category": "crm",
+      "title": {
+        "en": "Smarter CRM record matching",
+        "de": "Intelligentere CRM-Zuordnung"
+      },
+      "description": {
+        "en": "Make it easier to associate insights with the right CRM records.",
+        "de": "Insights noch zuverlässiger mit den richtigen CRM-Datensätzen verknüpfen."
+      }
+    },
+    {
+      "id": "roadmap-5",
+      "stage": "exploring",
+      "category": "coaching",
+      "title": {
+        "en": "Coaching progress over time",
+        "de": "Coaching-Fortschritt im Zeitverlauf"
+      },
+      "description": {
+        "en": "See how team skills and coaching scores develop.",
+        "de": "Die Entwicklung von Team-Kompetenzen und Coaching-Scores nachvollziehen."
+      }
+    },
+    {
+      "id": "roadmap-6",
+      "stage": "exploring",
+      "category": "agents",
+      "title": {
+        "en": "Simpler AI action approvals",
+        "de": "Einfachere Freigabe von KI-Aktionen"
+      },
+      "description": {
+        "en": "Explore more convenient ways to review automation actions.",
+        "de": "Einfachere Möglichkeiten zur Freigabe von Automationsaktionen prüfen."
+      }
+    },
+    {
+      "id": "roadmap-7",
+      "stage": "exploring",
+      "category": "intelligence",
+      "title": {
+        "en": "Clearer forecasting views",
+        "de": "Übersichtlichere Forecasts"
+      },
+      "description": {
+        "en": "Make pipeline forecasts easier to interpret and discuss.",
+        "de": "Pipeline-Forecasts leichter interpretieren und besprechen."
+      }
+    },
+    {
+      "id": "roadmap-8",
+      "stage": "exploring",
+      "category": "agents",
+      "title": {
+        "en": "Better follow-up workflows",
+        "de": "Bessere Follow-up-Workflows"
+      },
+      "description": {
+        "en": "Reduce the manual work between a meeting and the next step.",
+        "de": "Weniger manueller Aufwand zwischen Meeting und nächstem Schritt."
+      }
+    },
+    {
+      "id": "roadmap-9",
+      "stage": "exploring",
+      "category": "platform",
+      "title": {
+        "en": "Personalized dashboards",
+        "de": "Personalisierte Dashboards"
+      },
+      "description": {
+        "en": "Explore flexible dashboards for the metrics that matter.",
+        "de": "Flexible Dashboards für die wichtigsten Kennzahlen prüfen."
+      }
+    },
+    {
+      "id": "roadmap-10",
+      "stage": "exploring",
+      "category": "crm",
+      "title": {
+        "en": "More CRM flexibility",
+        "de": "Mehr Flexibilität im CRM"
+      },
+      "description": {
+        "en": "Improve CRM connectivity and synchronization options.",
+        "de": "CRM-Anbindungen und Synchronisationsmöglichkeiten weiter verbessern."
+      }
+    },
+    {
+      "id": "roadmap-11",
+      "stage": "shipped",
+      "category": "crm",
+      "title": {
+        "en": "Enhanced CRM Workflow Builder",
+        "de": "Erweiterter CRM-Workflow-Builder"
+      },
+      "description": {
+        "en": "More control over record creation, updates and workflow order.",
+        "de": "Mehr Kontrolle über das Anlegen und Aktualisieren von Datensätzen sowie die Reihenfolge von Workflows."
+      }
+    },
+    {
+      "id": "roadmap-12",
+      "stage": "shipped",
+      "category": "coaching",
+      "title": {
+        "en": "AI Agent scorecard analysis",
+        "de": "Scorecard-Analyse mit dem AI Agent"
+      },
+      "description": {
+        "en": "Explore coaching scorecards through the AI Agent.",
+        "de": "Coaching-Scorecards über den AI Agent analysieren."
+      }
+    },
+    {
+      "id": "roadmap-13",
+      "stage": "shipped",
+      "category": "crm",
+      "title": {
+        "en": "Improved CRM synchronization",
+        "de": "Verbesserte CRM-Synchronisation"
+      },
+      "description": {
+        "en": "Refinements to standard and custom CRM sync workflows.",
+        "de": "Verbessertes Zusammenspiel von Standard- und individuellen CRM-Sync-Workflows."
+      }
+    }
+  ]
+}
