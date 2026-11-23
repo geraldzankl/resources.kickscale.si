@@ -21,14 +21,47 @@ function opposite(){
  return '/'+(isDe?'en':'de')+'/';
 }
 function markup(includeLocale){
+ const site=isDe?'https://www.kickscale.com/':'https://www.kickscale.com/en/';
+ const official={
+ overview:site+'product',capture:site+'product/capture',assistant:site+'product/assistant',
+ coach:site+'product/coach',intelligence:site+'product/intelligence',agents:site+'product/agents',
+ integrations:site+'integrations',updates:site+'updates',support:site+'contact',trust:isDe?'https://www.kickscale.com/legal':'https://www.kickscale.com/en/legal',policies:isDe?'https://www.kickscale.com/legal':'https://www.kickscale.com/en/legal'
+ };
  const entries=isDe?[
- ['Überblick',product],['Gesprächserfassung',product+'#capture'],['KI-Assistent',product+'#assistant'],['KI-Coaching',product+'#coach'],['Revenue Intelligence',product+'#intelligence'],['KI-Agenten & Automationen',product+'#agents'],['Integrationen & CRM',product+'#integrations'],['Produktdemos',presentations+'#demos'],['Help Center','https://intercom.help/kickscale-gmbh/de/']
+ ['▣','Capture','Jedes Kundengespräch wird zu verwertbarem Wissen.',official.capture],
+ ['✦','Assistant','Follow-ups und CRM-Updates automatisieren.',official.assistant],
+ ['◉','Coach','Echte Gespräche für Coaching nutzen.',official.coach],
+ ['▥','Intelligence','Deals, Risiken und Forecasts verstehen.',official.intelligence],
+ ['⚡','Agents & Automations','Vom Gespräch zur nächsten Aktion.',official.agents]
  ]:[
- ['Overview',product],['Conversation Capture',product+'#capture'],['AI Assistant',product+'#assistant'],['AI Coaching',product+'#coach'],['Revenue Intelligence',product+'#intelligence'],['AI Agents & Automations',product+'#agents'],['Integrations & CRM',product+'#integrations'],['Product demos',presentations+'#demos'],['Help Center','https://intercom.help/kickscale-gmbh/en/']
+ ['▣','Capture','Make customer conversations usable.',official.capture],
+ ['✦','Assistant','Automate follow-ups and CRM updates.',official.assistant],
+ ['◉','Coach','Coach with real customer conversations.',official.coach],
+ ['▥','Intelligence','Understand deals, risk and forecasts.',official.intelligence],
+ ['⚡','Agents & Automations','Move from conversations to action.',official.agents]
  ];
- const drop=entries.map(([label,url])=>'<a href="'+url+'"'+(url.startsWith('http')?' target="_blank" rel="noopener noreferrer"':'')+'>'+label+'</a>').join('');
- return '<details class="buyer-menu-group" data-buyer-menu><summary>'+(isDe?'Produktinformationen':'Product Information')+'</summary><div class="buyer-menu-panel">'+drop+'</div></details>'+
- '<a href="'+presentations+'">'+(isDe?'Präsentationen':'Presentations')+'</a>'+
+ const quick=isDe?[
+ ['Integrationen','CRM, E-Mail & Kalender',official.integrations],
+ ['Release Notes','Neue Funktionen & Updates',official.updates],
+ ['Support','Hilfe & Anleitungen','https://intercom.help/kickscale-gmbh/de/'],
+ ['Trust & Privacy','Sicherheit & Datenschutz',official.trust],
+ ['Data Policies','Verträge & Richtlinien',official.policies]
+ ]:[
+ ['Integrations','CRM, email & calendar',official.integrations],
+ ['Release Notes','New features & updates',official.updates],
+ ['Support','Help & documentation','https://intercom.help/kickscale-gmbh/en/'],
+ ['Trust & Privacy','Security & compliance',official.trust],
+ ['Data Policies','Contracts & policies',official.policies]
+ ];
+ const drop=entries.map(([icon,label,subtitle,url])=>'<a class="buyer-mega-module" href="'+url+'" target="_blank" rel="noopener noreferrer"><span class="buyer-mega-icon">'+icon+'</span><span><strong>'+label+'</strong><small>'+subtitle+'</small></span></a>').join('');
+ const shortcut=quick.map(([label,subtitle,url])=>'<a href="'+url+'" target="_blank" rel="noopener noreferrer"><strong>'+label+'</strong><small>'+subtitle+'</small></a>').join('');
+ const menu='<div class="buyer-menu-panel buyer-mega-panel"><div class="buyer-mega-main"><div class="buyer-mega-list"><div class="buyer-mega-eyebrow">ONE REVENUE PLATFORM</div>'+drop+'</div>'+
+ '<div class="buyer-mega-graphic"><div class="buyer-mega-eyebrow">KICKSCALE REVENUE PLATFORM</div><h3>'+(isDe?'Vom Kundengespräch zu <em>mehr Umsatz.</em>':'From conversations to <em>more revenue.</em>')+'</h3>'+
+ '<div class="buyer-mega-flow"><div class="buyer-mega-symbol">K</div><div class="buyer-mega-outcomes"><span>✓ '+(isDe?'Follow-up versendet':'Follow-up sent')+'</span><span>✓ '+(isDe?'CRM aktualisiert':'CRM updated')+'</span><span>✓ '+(isDe?'Deal besser bewertbar':'Deal intelligence ready')+'</span></div></div>'+
+ '<div class="buyer-mega-integrations"><span>Microsoft 365</span><span>Google Workspace</span><span>Salesforce</span><span>HubSpot</span><span>Dynamics 365</span></div>'+
+ '<a class="buyer-mega-discover" href="'+official.overview+'" target="_blank" rel="noopener noreferrer">'+(isDe?'Plattform entdecken':'Explore platform')+' →</a></div></div><div class="buyer-mega-shortcuts">'+shortcut+'</div></div>';
+ return '<details class="buyer-menu-group buyer-mega-group" data-buyer-menu><summary>'+(isDe?'Produktinformationen':'Product Information')+'</summary>'+menu+'</details>'+
+ '<a href="'+presentations+'">'+(isDe?'Präsentationen & Demos':'Presentations & Demos')+'</a>'+
  '<a href="'+roi+'">'+(isDe?'ROI-Rechner':'ROI Calculator')+'</a>'+
  '<a href="'+legal+'" target="_blank" rel="noopener noreferrer">'+(isDe?'Rechtliches & Datenschutz':'Legal & Compliance')+' ↗</a>'+
  (includeLocale?'<span class="buyer-locale"><a href="'+(isDe?opposite():location.pathname)+'"'+(!isDe?' aria-current="true"':'')+'>EN</a><a href="'+(isDe?location.pathname:opposite())+'"'+(isDe?' aria-current="true"':'')+'>DE</a></span>':'');
